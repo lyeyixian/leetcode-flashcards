@@ -93,8 +93,7 @@ sequenceDiagram
     App->>Local: adds a log entry, not synced
     App-->>User: shows the next card
     App->>Sync: sends the entries that are not synced
-    alt no signal
-        Sync--xApp: no answer
+    alt no signal, the request fails
         App->>App: keeps the entries, tries again later
     else the sync works
         Sync-->>App: entries from the other devices
