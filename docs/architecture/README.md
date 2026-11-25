@@ -17,8 +17,10 @@ flowchart TB
     user(["<b>Yi Xian</b><br/>[Person]<br/><small>Practises on the commute</small>"]):::person
     system["<b>LeetCode flashcards</b><br/>[Software system]<br/><small>Cards, schedule, patterns</small>"]:::system
     leetcode["<b>LeetCode</b><br/>[External: website]<br/><small>Full problem pages</small>"]:::external
+    github["<b>GitHub</b><br/>[External: OAuth]<br/><small>Proves who signs in</small>"]:::external
 
     user -- "practises, HTTPS" --> system
+    system -- "signs in, OAuth" --> github
     user -- "opens a problem" --> leetcode
     system -. "links to" .-> leetcode
 
@@ -35,6 +37,7 @@ flowchart TB
 | Yi Xian | Person | The only user. Practises cards on a phone, and sometimes on a laptop. |
 | LeetCode flashcards | This system | Shows the cards and the pattern pages, schedules the reviews, and keeps the progress the same on all devices. |
 | LeetCode | Outside system | Shows the full problem. The site only links to it. |
+| GitHub | Outside system | Proves that the person who signs in is the owner. See [ADR-0006](../adr/0006-sign-in-with-github-through-supabase-auth.md). |
 
 ## Level 2: containers
 
@@ -52,10 +55,13 @@ flowchart TB
         db[("<b>Progress database</b><br/>[Container: Supabase]<br/><small>Rating log of all devices</small>")]:::store
     end
 
+    github["<b>GitHub</b><br/>[External: OAuth]<br/><small>Proves who signs in</small>"]:::external
+
     user -- "taps, HTTPS" --> app
     content -. "built into" .-> app
     app -- "reads, writes" --> local
     app -- "syncs, HTTPS" --> db
+    db -- "checks sign-in" --> github
 
     classDef person fill:#1f6feb,stroke:#58a6ff,color:#ffffff,rx:8,ry:8
     classDef system fill:#1f6feb,stroke:#58a6ff,color:#ffffff,rx:8,ry:8
@@ -70,7 +76,7 @@ flowchart TB
 | Card content | Markdown files in `content/` | Holds the problem cards and the pattern pages. The build turns them into data for the web app. See [ADR-0001](../adr/0001-card-content-as-markdown-in-the-repo.md). |
 | Web app | React, TypeScript, Vite | Shows all pages, runs the practice session and the drill, and schedules each card. It runs in the phone browser and works with no signal. See [ADR-0003](../adr/0003-react-with-vite-and-typescript.md). |
 | Device store | IndexedDB in the browser | Holds the rating log and the settings on one device, and marks each entry that is not synced yet. A session works with no signal. See [ADR-0004](../adr/0004-progress-is-a-log-of-every-rating.md). |
-| Progress database | Supabase Postgres, free plan | Holds the rating log in `review_log` and the settings in `settings`, for all devices. The web app calls it directly with `supabase-js`. Row level security limits each row to its owner. See [ADR-0005](../adr/0005-supabase-holds-the-synced-progress.md). |
+| Progress database | Supabase Postgres, free plan | Holds the rating log in `review_log` and the settings in `settings`, for all devices. The web app calls it directly with `supabase-js`. Supabase Auth signs the person in with GitHub, and row level security limits each row to that account. See [ADR-0005](../adr/0005-supabase-holds-the-synced-progress.md) and [ADR-0006](../adr/0006-sign-in-with-github-through-supabase-auth.md). |
 
 ## Sequence: rate a card
 

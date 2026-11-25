@@ -12,3 +12,4 @@ The frameworks and libraries, each with its job. A row marked "Proposed" is not 
 | Device store | IndexedDB | The rating log and the settings on one device | [ADR-0004](../adr/0004-progress-is-a-log-of-every-rating.md) |
 | Sync client | `supabase-js` | Sends and gets the rating log entries | [ADR-0005](../adr/0005-supabase-holds-the-synced-progress.md) |
 | Progress database | Supabase Postgres, free plan | The rating log and the settings of all devices | [ADR-0005](../adr/0005-supabase-holds-the-synced-progress.md) |
+| Sign-in | Supabase Auth, GitHub provider | Proves that the owner makes each sync request | [ADR-0006](../adr/0006-sign-in-with-github-through-supabase-auth.md) |
