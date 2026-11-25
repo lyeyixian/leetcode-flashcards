@@ -10,3 +10,4 @@ One file per decision. A decision that changes gets a new file, and the status o
 | [0004](0004-progress-is-a-log-of-every-rating.md) | Progress is a log of every rating | Accepted |
 | [0005](0005-supabase-holds-the-synced-progress.md) | Supabase holds the synced progress | Accepted |
 | [0006](0006-sign-in-with-github-through-supabase-auth.md) | Sign in with GitHub through Supabase Auth | Accepted |
+| [0007](0007-host-the-site-on-the-home-server.md) | Host the site on the home server | Accepted |
