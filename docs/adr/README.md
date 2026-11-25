@@ -12,3 +12,4 @@ One file per decision. A decision that changes gets a new file, and the status o
 | [0006](0006-sign-in-with-github-through-supabase-auth.md) | Sign in with GitHub through Supabase Auth | Accepted |
 | [0007](0007-host-the-site-on-the-home-server.md) | Host the site on the home server | Accepted |
 | [0008](0008-a-small-sync-api-with-sqlite-on-the-home-server.md) | A small sync API with SQLite on the home server | Accepted |
+| [0009](0009-reach-the-home-server-through-tailscale-serve.md) | Reach the home server through Tailscale Serve | Accepted |
