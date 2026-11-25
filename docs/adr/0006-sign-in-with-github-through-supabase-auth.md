@@ -1,6 +1,6 @@
 # ADR-0006: Sign in with GitHub through Supabase Auth
 
-**Status:** Accepted (2026-11-25)
+**Status:** Superseded by [ADR-0010](0010-the-api-trusts-the-tailscale-identity-of-the-owner.md) (2026-11-25)
 
 ## Context
 
