@@ -50,9 +50,9 @@ flowchart TB
     subgraph system["LeetCode flashcards"]
         content[("<b>Card content</b><br/>[Container: Markdown]<br/><small>Cards and pattern pages</small>")]:::store
         app["<b>Web app</b><br/>[Container: React, Vite]<br/><small>All pages, works offline</small>"]:::container
-        local[("<b>Device store</b><br/>[Container: IndexedDB]<br/><small>Progress on this device</small>")]:::store
+        local[("<b>Device store</b><br/>[Container: IndexedDB]<br/><small>Rating log of this device</small>")]:::store
         sync["<b>Sync service</b><br/>[Container: not agreed]<br/><small>Merges progress</small>"]:::container
-        db[("<b>Progress database</b><br/>[Container: not agreed]<br/><small>Progress of all devices</small>")]:::store
+        db[("<b>Progress database</b><br/>[Container: not agreed]<br/><small>Rating log of all devices</small>")]:::store
     end
 
     user -- "taps, HTTPS" --> app
@@ -73,9 +73,35 @@ flowchart TB
 |---|---|---|
 | Card content | Markdown files in `content/` | Holds the problem cards and the pattern pages. The build turns them into data for the web app. See [ADR-0001](../adr/0001-card-content-as-markdown-in-the-repo.md). |
 | Web app | React, TypeScript, Vite | Shows all pages, runs the practice session and the drill, and schedules each card. It runs in the phone browser and works with no signal. See [ADR-0003](../adr/0003-react-with-vite-and-typescript.md). |
-| Device store | IndexedDB in the browser (Proposed) | Holds the ratings and settings on one device, so that a session works with no signal. |
-| Sync service | Not agreed | Takes the ratings and settings of each device and gives back the ratings of the other devices. |
-| Progress database | Not agreed | Holds the ratings and settings of all devices. |
+| Device store | IndexedDB in the browser | Holds the rating log and the settings on one device, and marks each entry that is not synced yet. A session works with no signal. See [ADR-0004](../adr/0004-progress-is-a-log-of-every-rating.md). |
+| Sync service | Not agreed | Stores the new log entries of each device, and returns the entries that the device does not have. |
+| Progress database | Not agreed | Holds the rating log and the settings of all devices. |
+
+## Sequence: rate a card
+
+What happens when the person rates a card, with or without a signal?
+
+```mermaid
+sequenceDiagram
+    autonumber
+    actor User as Yi Xian
+    participant App as Web app
+    participant Local as Device store
+    participant Sync as Sync service
+
+    User->>App: taps a rating
+    App->>Local: adds a log entry, not synced
+    App-->>User: shows the next card
+    App->>Sync: sends the entries that are not synced
+    alt no signal
+        Sync--xApp: no answer
+        App->>App: keeps the entries, tries again later
+    else the sync works
+        Sync-->>App: entries from the other devices
+        App->>Local: marks the sent entries as synced, adds the new entries
+        App->>App: calculates the state of each card again
+    end
+```
 
 ## What stays out of this repo
 

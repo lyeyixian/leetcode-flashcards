@@ -9,4 +9,4 @@ The frameworks and libraries, each with its job. A row marked "Proposed" is not 
 | UI framework | React | All pages and the session state | [ADR-0003](../adr/0003-react-with-vite-and-typescript.md) |
 | Build | Vite | Builds the static files of the web app | [ADR-0003](../adr/0003-react-with-vite-and-typescript.md) |
 | Scheduler | `ts-fsrs` | Calculates the next due date of each card | Proposed |
-| Device store | IndexedDB | Ratings and settings on one device | Proposed |
+| Device store | IndexedDB | The rating log and the settings on one device | [ADR-0004](../adr/0004-progress-is-a-log-of-every-rating.md) |
