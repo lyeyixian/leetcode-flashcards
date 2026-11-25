@@ -8,6 +8,7 @@ One file per decision. A decision that changes gets a new file, and the status o
 | [0002](0002-fsrs-schedules-the-reviews.md) | FSRS schedules the reviews | Proposed |
 | [0003](0003-react-with-vite-and-typescript.md) | React with Vite and TypeScript | Accepted |
 | [0004](0004-progress-is-a-log-of-every-rating.md) | Progress is a log of every rating | Accepted |
-| [0005](0005-supabase-holds-the-synced-progress.md) | Supabase holds the synced progress | Accepted |
+| [0005](0005-supabase-holds-the-synced-progress.md) | Supabase holds the synced progress | Superseded by [0008](0008-a-small-sync-api-with-sqlite-on-the-home-server.md) |
 | [0006](0006-sign-in-with-github-through-supabase-auth.md) | Sign in with GitHub through Supabase Auth | Accepted |
 | [0007](0007-host-the-site-on-the-home-server.md) | Host the site on the home server | Accepted |
+| [0008](0008-a-small-sync-api-with-sqlite-on-the-home-server.md) | A small sync API with SQLite on the home server | Accepted |

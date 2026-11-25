@@ -1,6 +1,6 @@
 # ADR-0005: Supabase holds the synced progress
 
-**Status:** Accepted (2026-11-25)
+**Status:** Superseded by [ADR-0008](0008-a-small-sync-api-with-sqlite-on-the-home-server.md) (2026-11-25)
 
 ## Context
 
