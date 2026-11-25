@@ -46,10 +46,52 @@ flowchart TB
 
 The laptop is a second device with the same parts as the iPhone.
 
+## Sequence: a release
+
+What happens between a merge to `main` and the new version on the iPhone? See [ADR-0011](../adr/0011-release-an-image-on-ghcr-that-the-home-server-pulls.md).
+
+```mermaid
+sequenceDiagram
+    autonumber
+    actor Owner as Yi Xian
+    participant GH as GitHub Actions
+    participant GHCR as GHCR
+    participant Server as Home server
+    participant App as Web app
+
+    Owner->>GH: merges a pull request to main
+    GH->>GH: runs the checks and builds the image
+    alt the checks or the build fail
+        GH-->>Owner: shows the failed run
+    else the build works
+        GH->>GHCR: pushes the image, tags latest and the SHA
+        Server->>GHCR: pulls latest, on the 15 minute timer
+        alt the image did not change
+            GHCR-->>Server: no new image
+        else a new image
+            GHCR-->>Server: the new image
+            Server->>Server: restarts the Sync API container
+            App->>Server: gets the new files when opened with Tailscale on
+        end
+    end
+```
+
 ## Settings
 
 | Setting | Where it is set | Purpose |
 |---|---|---|
 | `OWNER_LOGIN` | The Compose environment on the home server | The Tailscale login that the Sync API accepts |
 | `DATABASE_PATH` | The Compose environment on the home server | The path of the SQLite file inside the container (Proposed) |
+| `IMAGE_TAG` | The Compose file on the home server | The image tag to run. `latest`, or a commit SHA to roll back (Proposed) |
 | `PORT` | The Compose environment on the home server | The port on `127.0.0.1` that Tailscale Serve forwards to (Proposed) |
+
+## One-time setup
+
+These steps prepare the home server. They are a proposal until the first release.
+
+1. Make a Compose project for the site on the home server, with a volume for the progress database.
+2. Set `OWNER_LOGIN` to the Tailscale login of the owner.
+3. Bind the Sync API to `127.0.0.1` on a free port.
+4. Add a Tailscale Serve service for the site that forwards HTTPS to that port.
+5. Add the systemd timer that pulls the image every 15 minutes.
+6. Add a daily backup of the SQLite file.

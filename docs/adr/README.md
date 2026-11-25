@@ -14,3 +14,4 @@ One file per decision. A decision that changes gets a new file, and the status o
 | [0008](0008-a-small-sync-api-with-sqlite-on-the-home-server.md) | A small sync API with SQLite on the home server | Accepted |
 | [0009](0009-reach-the-home-server-through-tailscale-serve.md) | Reach the home server through Tailscale Serve | Accepted |
 | [0010](0010-the-api-trusts-the-tailscale-identity-of-the-owner.md) | The API trusts the Tailscale identity of the owner | Accepted |
+| [0011](0011-release-an-image-on-ghcr-that-the-home-server-pulls.md) | Release an image on GHCR that the home server pulls | Accepted |

@@ -6,7 +6,7 @@ These pages show how the LeetCode flashcards site is built. They describe versio
 |---|---|
 | This page | C4 level 1 and 2: the system and its containers |
 | [Components](components.md) | The main flows: rate a card, and sync |
-| [Deployment](deployment.md) | Where each part runs, and how a release reaches the home server |
+| [Deployment](deployment.md) | Where each part runs, how a release reaches the home server, and the settings |
 | [Stack](stack.md) | The frameworks and libraries, each with its job |
 
 ## Level 1: system context
@@ -88,3 +88,4 @@ The Sync API serves the web app files as well as the API. This is a proposal. A 
 
 - The progress data. The repo is public, so the ratings live only in the progress database and on each device.
 - The Tailscale login of the owner. The `OWNER_LOGIN` setting holds it on the home server.
+
