@@ -86,6 +86,23 @@ A flashcard shows one LeetCode problem on the front. The back holds the steps th
 - **When** I tap the problem title
 - **Then** the LeetCode page of the problem opens in a new tab
 
+### 12. See which lists a problem is on
+
+- **Given** a problem is on Blind 75, a NeetCode list or a company in my company list
+- **When** I look at the front of its card
+- **Then** I see a tag for each of those lists, such as `Blind 75` or `Google`
+- **And** I see no tag for a company that is not in my company list
+
+### 13. A problem on no list
+
+- **Given** a problem is on no list
+- **When** I look at the front of its card
+- **Then** I see no list tags
+
+## Assumptions
+
+- The list tags are on the front, not the back. A list name does not give away the pattern.
+
 ## Decisions
 
 - **The pattern name is only on the back.** You chose on 20 Nov 2026 to drop the toggle on the front, because a peek gives the answer away.

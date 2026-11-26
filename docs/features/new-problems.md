@@ -93,11 +93,9 @@ New problems are cards for LeetCode problems that you did not attempt yet. They 
 ## Assumptions
 
 - The cards for all list problems are written in one load before you use them, a few hundred in all. A new problem shows the next card from that set.
-- Cards for a company that you add come with the next load. Until then the company shows `Cards on the way`.
 - Company lists change over time. A new load before your interviews can bring them up to date.
 - Random LeetCode problems after the lists are not in this version. Criterion 12 is my proposal for that point.
 - A new problem that you ask for shows at once and is not part of the 5 new cards a day.
-- A problem that is on two company lists comes from the first of the two in your order. You get it one time only.
 - The labels `Finish today's cards first`, `Company lists`, `Add company` and `Cards on the way` are my proposal.
 
 ## Decisions
@@ -108,3 +106,5 @@ New problems are cards for LeetCode problems that you did not attempt yet. They 
 - **New problems only after the session.** You chose on 26 Nov 2026 to get a new problem only when you finish your practice session. This replaces "ask any time" from 20 Nov 2026.
 - **Daily is a choice, off by default.** You asked on 20 Nov 2026 to choose if one comes each day, and agreed on 26 Nov 2026 that it starts off.
 - **The labels `New problem`, `new`, `Daily new problem` and `You finished every list`.** You agreed to these on 26 Nov 2026.
+- **A new company waits for the next load.** You agreed on 26 Nov 2026 that a company you add shows `Cards on the way` until its cards come with the next load. The site does not write cards while you use it.
+- **A problem on two company lists comes one time.** You agreed on 26 Nov 2026 that it comes from the company that is higher in your list.
