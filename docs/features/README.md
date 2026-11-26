@@ -7,6 +7,7 @@ LeetCode flashcards is a practice site for your phone. You use it on your commut
 - [Every page](every-page.md). The rules that apply on all pages: phone size, no signal, home screen, progress on all your devices.
 - [Practice session](practice-session.md). You review the cards that are due today, then a small number of new cards.
 - [Flashcard](flashcard.md). You read a problem, commit to each step in your head, and reveal the steps one at a time.
+- [List tags](list-tags.md). You see on the front of a card which popular lists and companies the problem is on.
 - [Pattern decision tree](pattern-decision-tree.md). You answer yes or no questions about a problem to find its pattern.
 - [Patterns page](patterns-page.md). You read each pattern, how to recognise it, its templates and its problems.
 - [Pattern quiz](pattern-quiz.md). You see only the problem and pick its pattern from 4 choices, in about 10 seconds a card.
