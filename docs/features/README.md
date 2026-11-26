@@ -12,4 +12,5 @@ LeetCode flashcards is a practice site for your phone. You use it on your commut
 - [Patterns page](patterns-page.md). You read each pattern, how to recognise it, its templates and its problems.
 - [Pattern quiz](pattern-quiz.md). You see only the problem and pick its pattern from 4 choices, in about 10 seconds a card.
 - [New problems](new-problems.md). You add cards for problems that you did not attempt yet, on request or one each day.
+- [Company lists](company-lists.md). You choose the companies that you target and their order.
 - [Desk list](desk-list.md). You get a weekly list of the cards that you found hard, to code at a desk.
