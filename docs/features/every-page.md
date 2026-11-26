@@ -59,7 +59,6 @@ These criteria apply to all pages of the site. The other feature files do not re
 
 ## Assumptions
 
-- You are the only person who uses the site. The spec has no sign-in for other people.
 - The menu labels `Practice`, `Drill`, `Patterns` and `Settings` are my proposal.
 - The desk list and the new problem controls are inside `Practice` and `Settings`, not in the menu.
 
@@ -68,3 +67,4 @@ These criteria apply to all pages of the site. The other feature files do not re
 - **Progress is the same on all devices.** You chose this on 20 Nov 2026, over progress that stays only on the phone.
 - **The site works with no signal.** You chose this on 20 Nov 2026, because trains go underground. It installs to the home screen like an app.
 - **No typing.** You said on 20 Nov 2026 that you do not want to type on the commute.
+- **Only you use the site in this version.** You said on 26 Nov 2026 that you are the only person for now. Opening it to other people is for a later version.
