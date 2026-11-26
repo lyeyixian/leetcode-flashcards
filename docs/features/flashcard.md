@@ -96,3 +96,4 @@ A flashcard shows one LeetCode problem on the front. The back holds the steps th
 - **The content can change later.** You said on 23 Nov 2026 that the card content is okay for now and the format is fine.
 - **Look-alike patterns as the wrong choices.** You agreed to this on 26 Nov 2026. A random wrong choice is easy to rule out.
 - **The labels `I have it` and `Show answer`.** You agreed to these on 26 Nov 2026.
+- **Tapping the title opens LeetCode.** You agreed to this on 26 Nov 2026.
