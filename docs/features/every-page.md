@@ -54,12 +54,8 @@ These criteria apply to all pages of the site. The other feature files do not re
 
 - **Given** I am on any page
 - **When** I look at the bottom of the screen
-- **Then** I see a menu with `Practice`, `Pattern quiz`, `Patterns` and `Settings`
+- **Then** I see a menu with `Practice`, `Pattern quiz`, `Patterns`, `Desk list` and `Settings`
 - **And** the menu item of the current page is marked
-
-## Assumptions
-
-- The desk list is inside `Practice`, not in the menu.
 
 ## Decisions
 
@@ -69,3 +65,4 @@ These criteria apply to all pages of the site. The other feature files do not re
 - **Only you use the site in this version.** You said on 26 Nov 2026 that you are the only person for now. Opening it to other people is for a later version.
 - **The menu labels.** You agreed on 26 Nov 2026 to `Practice`, `Pattern quiz`, `Patterns` and `Settings`. You chose `Pattern quiz` over `Drill`.
 - **The new problem controls are in `Settings`.** You agreed to this on 26 Nov 2026.
+- **The desk list has its own page in the menu.** You chose this on 26 Nov 2026, over a link inside `Practice`.

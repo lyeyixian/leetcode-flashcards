@@ -11,7 +11,7 @@ The desk list is a weekly list of problems to code at a desk. It holds the cards
 ### 1. See this week's list
 
 - **Given** I rated some cards `Again` or `Hard` this week
-- **When** I open `Code at a desk` from `Practice`
+- **When** I open `Desk list` from the menu
 - **Then** I see each of those problems one time, with its number, title and pattern
 - **And** the problems I rated `Again` come before the ones I rated only `Hard`
 
@@ -43,9 +43,10 @@ The desk list is a weekly list of problems to code at a desk. It holds the cards
 
 ## Assumptions
 
-- The week starts on Monday. This is my choice.
-- The labels `Code at a desk` and `Nothing to code this week` are my proposal.
+- The label `Nothing to code this week` is my proposal.
 
 ## Decisions
 
 - **A weekly desk list.** You agreed to this on 20 Nov 2026 from the research.
+- **The week starts on Monday.** You agreed to this on 26 Nov 2026.
+- **The desk list has its own page.** You chose this on 26 Nov 2026, over a link inside `Practice`.
