@@ -41,12 +41,10 @@ The desk list is a weekly list of problems to code at a desk. It holds the cards
 - **When** I open the desk list
 - **Then** I see the message `Nothing to code this week`
 
-## Assumptions
-
-- The label `Nothing to code this week` is my proposal.
-
 ## Decisions
 
 - **A weekly desk list.** You agreed to this on 20 Nov 2026 from the research.
 - **The week starts on Monday.** You agreed to this on 26 Nov 2026.
 - **The desk list has its own page.** You chose this on 26 Nov 2026, over a link inside `Practice`.
+- **`Again` problems come before `Hard` ones.** You agreed to this on 26 Nov 2026.
+- **The label `Nothing to code this week`.** You agreed to this on 26 Nov 2026.
