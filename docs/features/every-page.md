@@ -54,12 +54,12 @@ These criteria apply to all pages of the site. The other feature files do not re
 
 - **Given** I am on any page
 - **When** I look at the bottom of the screen
-- **Then** I see a menu with `Practice`, `Drill`, `Patterns` and `Settings`
+- **Then** I see a menu with `Practice`, `Pattern quiz`, `Patterns` and `Settings`
 - **And** the menu item of the current page is marked
 
 ## Assumptions
 
-- The menu labels `Practice`, `Drill`, `Patterns` and `Settings` are my proposal.
+- The menu labels `Practice`, `Patterns` and `Settings` are my proposal.
 - The desk list and the new problem controls are inside `Practice` and `Settings`, not in the menu.
 
 ## Decisions
@@ -68,3 +68,4 @@ These criteria apply to all pages of the site. The other feature files do not re
 - **The site works with no signal.** You chose this on 20 Nov 2026, because trains go underground. It installs to the home screen like an app.
 - **No typing.** You said on 20 Nov 2026 that you do not want to type on the commute.
 - **Only you use the site in this version.** You said on 26 Nov 2026 that you are the only person for now. Opening it to other people is for a later version.
+- **The menu label `Pattern quiz`.** You chose this on 26 Nov 2026, over `Drill`.

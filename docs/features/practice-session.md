@@ -87,7 +87,7 @@ The rules are:
 - **When** I open `Practice`
 - **Then** I see the message `All done for today`
 - **And** I see the date when the next card is due
-- **And** I see the `Drill` mode and the `New problem` button as other things to do
+- **And** I see the `Pattern quiz` and the `New problem` button as other things to do
 
 ### 12. Stop in the middle of a session
 
