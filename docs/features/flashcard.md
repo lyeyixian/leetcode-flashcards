@@ -22,6 +22,7 @@ A flashcard shows one LeetCode problem on the front. The back holds the steps th
 - **When** I continue to the back
 - **Then** the first step asks me to pick the pattern
 - **And** I can pick it from 4 choices, or walk the pattern decision tree
+- **And** the 4 choices hold the right pattern and 3 patterns that look like it, such as two pointers for a sliding window problem
 
 ### 3. See if my pattern pick was right
 
@@ -85,11 +86,6 @@ A flashcard shows one LeetCode problem on the front. The back holds the steps th
 - **When** I tap the problem title
 - **Then** the LeetCode page of the problem opens in a new tab
 
-## Assumptions
-
-- The labels `I have it` and `Show answer` are my proposal.
-- The first 4 choices hold the right pattern and 3 other patterns. I assumed the 3 others are patterns that look like the right one, such as two pointers for a sliding window problem.
-
 ## Decisions
 
 - **The pattern name is only on the back.** You chose on 20 Nov 2026 to drop the toggle on the front, because a peek gives the answer away.
@@ -98,3 +94,5 @@ A flashcard shows one LeetCode problem on the front. The back holds the steps th
 - **No typing to commit.** You said on 20 Nov 2026 that you do not want to type on the commute, so you think each step and tap.
 - **The longer card back stays.** You agreed on 20 Nov 2026 to the Bottleneck, Invariant and Variation steps.
 - **The content can change later.** You said on 23 Nov 2026 that the card content is okay for now and the format is fine.
+- **Look-alike patterns as the wrong choices.** You agreed to this on 26 Nov 2026. A random wrong choice is easy to rule out.
+- **The labels `I have it` and `Show answer`.** You agreed to these on 26 Nov 2026.
